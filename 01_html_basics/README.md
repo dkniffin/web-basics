@@ -1,6 +1,6 @@
 # HTML Basics
 
-The goal here is to test your knoweldge of HTML and see what's possible using only HTML. The assignment is to create this page using HTML:
+The goal here is to test your knowledge of HTML and see what's possible using only HTML. The assignment is to create this page using HTML:
 
 ![Screenshot](./screenshot.png)
 

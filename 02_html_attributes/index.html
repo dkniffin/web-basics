@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>HTML Attributes</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>HTML attributes</h1>
+    <p>Each HTML tag has a few parts to it, such as the opening tag, the closing tag and attributes.</p>
+
+    <img src="anatomy-of-an-html-tag.png" />
+
+    <p>
+      This exercise focuses on the HTML attributes. A list of some of the most common attributes
+      can be found <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">here</a>.
+      The beginning of this document will go through a few of the most commonly used global
+      attributes that can be used on any HTML element. After that, there will be some examples of
+      specific attributes, especially focused on forms and input elements.
+    </p>
+
+    <h2>Common HTML Attributes</h2>
+
+    <h3>id</h3>
+
+    <p>
+      The first important attribute is <code>id</code>, which is used to define a unique identifier
+      within the whole document. It's purpose is to identify the element when linking, styling,
+      or scripting:
+    </p>
+
+    <ul>
+      <li>
+        For linking, you can create a URL that links directly to any element on a page by adding a
+        "#identifier-name" to the end. For example, clicking on a link with an href of
+        <code>https://example.com#foo-bar</code> will navigate the user to https://example.com,
+        with the page scrolled down to focus on an element with <code>id="foo-bar"</code>.
+      </li>
+      <li>
+        For styling, in CSS you can target an individual element on the page using the
+        <code>id</code>. For example, the CSS <code>#id { color: red; }</code> would make the text
+        color red for the element with <code>id="foo-bar"</code>.
+      </li>
+      <li>
+        For scripting, in Javascript you can get a reference to an element using the
+        <code>id</code>. For example, to get a reference to the element with
+        <code>id="foo-bar"</code>, you can use the JS code
+        <code>document.getElementById("foo-bar")</code> or
+        <code>document.querySelector("#foo-bar")</code>.
+      </li>
+    </ul>
+
+    <h3>class</h3>
+
+    <p>
+      The next important attribute is <code>class</code>. This attribute defines a space-separated
+      list of classes for an element. For example, if an element has <code>class="foo bar"</code>,
+      then that element has the class "foo" and the class "bar". These classes are primarily used
+      for CSS styling, though they can be used for scripting as well. In the above example,
+      that element would have all of the CSS styles for both <code>.foo</code> and <code>.bar</code>.
+    </p>
+
+    <h3>data-* attributes</h3>
+
+    <p>
+      The final set of common HTML attributes that we'll cover here are ones that start with
+      the <code>data-</code> prefix. These attributes are the way for developers to define their
+      own data about an element, and they are typically used to pass data to Javascript. We'll
+      cover the in more depth when we learn JS.
+    </p>
+
+    <p>
+      <strong>Side-note:</strong> the * in the title for this section is called a wild-card.
+      You'll see it occasionally in the context of programming. It basically means "anything
+      could go here". For example, this section is referring to <code>data-foo</code>,
+      <code>data-bar</code>, <code>data-something-else</code>,
+      <code>data-whatever-custom-thing-you-can-think-of</code>, etc.
+    </p>
+
+    <h2>Forms and inputs</h2>
+
+    <p>
+      An important part of HTML is the ability to create forms. Let's go over some elements
+      found in forms.
+    </p>
+
+    <h3>form tag</h3>
+
+    <p>
+      The first tag in a form is
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">the form tag</a>.
+      It is used to set up a form that can be submitted to a backend. All other elements in the
+      form are nested inside of the form tag.
+    </p>
+
+    <form>
+      <p>This should be a basic text field:</p>
+      <label for="text_field">Text field</label>
+      <input type="text" name="text_field" id="text_field" required>
+
+      <p>This should be a checkbox that is checked by default:</p>
+      <label for="checkbox_field">Checkbox field</label>
+      <input type="checkbox" name="checkbox_field" id="checkbox_field" checked>
+
+      <p>This date box should default to 2021-06-02, and only allow dates between 2010-01-01 and 2030-01-01:</p>
+      <label for="date_field">Date field</label>
+      <input type="date" name="date_field" id="date_field" value="2021-06-02" min="2010-01-01" max="2030-01-01">
+
+      <p>This file picker should only allow png and jpeg files:</p>
+      <label for="file_field">File field</label>
+      <input type="file" name="file_field" id="file_field" accept="image/png, image/jpeg">
+
+      <p>The third radio here should be checked by default and they should all be connected so you can only pick one of them:</p>
+      <label for="radio_field_1">Option 1</label>
+      <input type="radio" name="radio_field" id="radio_field_1" value="option-1">
+      <label for="radio_field_2">Option 2</label>
+      <input type="radio" name="radio_field" id="radio_field_2" value="option-2">
+      <label for="radio_field_3">Option 3</label>
+      <input type="radio" name="radio_field" id="radio_field_3" value="option-3" checked>
+      <label for="radio_field_4">Option 4</label>
+      <input type="radio" name="radio_field" id="radio_field_4" value="option-4">
+
+      <br />
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
